@@ -1,0 +1,106 @@
+%% 
+%% This is file `jhu_a4.sty', generated 
+%% on <1995/04/028> by hacking in every bloody character.
+%% 
+%% Copyright (C) 1995 by J"urgen Hulverscheidt (jhu). All rights reserved. 
+%% 
+%% 
+\def\fileversion{2.0}
+\def\filedate{1995/04/05}
+\ifx\documentclass\undefined
+  \wlog{LaTeX Package `jhu_a4' \fileversion\space<\filedate> (jhu)}
+\else
+  \NeedsTeXFormat{LaTeX2e}[1994/06/01]
+  \ProvidesPackage{jhu_a4}[\filedate\space\fileversion\space
+                       A4 based page layout (jhu)]
+\fi
+
+\setlength{\paperwidth}{210mm}
+\setlength{\paperheight}{297mm}
+
+%% Vertical page layout
+%% ==================================================================
+%%
+\setlength{\voffset}{-1in}
+\setlength{\headheight}{\baselineskip}
+
+\newlength{\whitemargin@height}
+
+\newcommand{\vpagesetup}[3][1]{
+  \renewcommand{\baselinestretch}{#1}
+  \normalsize
+  %
+  % calculating \textheight
+  %
+  \ifnum #2 < 0
+    \relax
+  \else
+    \setlength{\textheight}{#2\baselineskip}
+    \addtolength{\textheight}{-\baselineskip}
+    \addtolength{\textheight}{\topskip}
+  \fi
+  %
+  % calculating \topmargin
+  %
+  \setlength{\whitemargin@height}{\paperheight}
+  \addtolength{\whitemargin@height}{-\headheight}
+  \addtolength{\whitemargin@height}{-\headsep}
+  \addtolength{\whitemargin@height}{-\textheight}
+  \addtolength{\whitemargin@height}{-\footskip}
+  \setlength{\topmargin}{#3\whitemargin@height}
+}
+
+\ifx\@ptsize\undefined\else
+  \ifcase \@ptsize\relax
+    \vpagesetup{58}{0.5}       % default parameters for 10pt
+  \or
+    \vpagesetup{51}{0.5}       % default parameters for 11pt
+  \or
+    \vpagesetup{48}{0.5}       % default parameters for 12pt
+  \fi
+\fi
+%% Horizontal page lagout
+%% ==================================================================
+%%
+\setlength{\hoffset}{-1in}
+\newlength{\total@width}
+\newlength{\whitemargin@width}
+\newlength{\tmp@width}
+
+\newcommand{\hpagesetup}[3]{
+  \setlength{\total@width}{#1}
+  \setlength{\textwidth}{#2\total@width}
+  \settowidth{\marginparsep}{\rmfamily\normalsize ---}
+  \setlength{\marginparwidth}{\marginparsep}
+  
+  \setlength{\tmp@width}{\textwidth}
+  \addtolength{\tmp@width}{\marginparsep}
+  \addtolength{\tmp@width}{\marginparwidth}
+  
+  \ifdim \tmp@width > \total@width
+    \setlength{\textwidth}{\total@width}
+    \setlength{\marginparsep}{0pt}
+    \setlength{\marginparwidth}{0pt}
+  \else
+    \setlength{\marginparwidth}{\total@width}
+    \addtolength{\marginparwidth}{-\textwidth}
+    \addtolength{\marginparwidth}{-\marginparsep}
+  \fi
+  
+  \setlength{\whitemargin@width}{\paperwidth}
+  \addtolength{\whitemargin@width}{-\total@width}
+  
+  \setlength{\oddsidemargin}{#3\whitemargin@width}
+  \setlength{\evensidemargin}{\whitemargin@width}
+  \addtolength{\evensidemargin}{-\oddsidemargin}
+  \addtolength{\evensidemargin}{\marginparsep}
+  \addtolength{\evensidemargin}{\marginparwidth}
+}
+
+\hpagesetup{165mm}{1.0}{0.6}   % default parameters
+
+\setlength{\parskip}{0.5\baselineskip}
+\addtolength{\parskip}{0pt plus 2pt}
+\parindent=\z@
+
+\endinput

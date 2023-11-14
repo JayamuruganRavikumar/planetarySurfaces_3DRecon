@@ -1,0 +1,182 @@
+
+%% Ab hier Abkürzungen für NT
+%\newcommand{\qq}[1]{\vspace{-1.8\parskip}\setlength{\fboxrule}{0mm}\begin{flushright}\fbox{\parbox{0.95\textwidth}{\color{boxgray}{\footnotesize{#1}}}}\end{flushright}\vspace{-1.8\parskip}}
+\newcommand{\qq}[1]{\vspace{-1.8\parskip}\setlength{\fboxrule}{0mm}\begin{flushright}\fbox{\parbox{0.95\textwidth}{\color{blue}{\footnotesize{#1}}}}\end{flushright}\vspace{-1.8\parskip}}
+%
+%
+% Gleichungsnumerierung mit \GL
+%
+\newcommand{\GL}[1]{{(Gl.~{}\ref{#1})}}
+%
+% Einfacher Textmode in Formeln
+%
+\newcommand{\tx}[1]{\mbox{#1}}
+%
+%
+%Fourier-Korrespondenz link  *-o
+\newcommand{\ftranl}{\bullet\!\!-\!\!\circ} 
+%
+%Fourier-Korrespondenz rechts  o-*
+\newcommand{\ftranr}{\circ\!\!-\!\!\bullet}  
+%
+%Fourier-Korrespondenz unten o
+%                            |
+%                            *
+\newcommand{\ftranb}{{\setlength{\unitlength}{12pt}\begin{picture}(0.5,1.6)\put(0,1){$\circ$}\put(0.186,0.186){\rule[2.5pt]{0.6pt}{7.5pt}}\put(0,0){$\bullet$}\end{picture}}}
+%
+%Fourier-Korrespondenz oben  *
+%                            |
+%                            o
+\newcommand{\ftrant}{{\setlength{\unitlength}{12pt}\begin{picture}(0.5,1.6)\put(0,1){$\bullet$}\put(0.186,0.186){\rule[2.5pt]{0.6pt}{7.5pt}}\put(0,0){$\circ$}\end{picture}}}
+%
+% Dirac-Kamm iii
+\newcommand{\dirkam}{\rule{1.2em}{0.05em}\hspace{-1em}\rule{0.05em}{0.6em}\hspace{0.33em}\rule{0.05em}{0.6em}\hspace{0.33em}\rule{0.05em}{0.6em}\hspace{0.2em}} 
+%
+%                 ___
+% Rechteckimpuls I   I
+\newcommand{\rechtimp}{\hspace{0.05em}\rule{0.05em}{0.7em}\hspace{-0.025em}\rule[0.675em]{0.6em}{0.05em}\hspace{-0.025em}\rule{0.05em}{0.7em}\hspace{0.05em}}%
+%
+%                 ___
+% Sprung      ___I   
+\newcommand{\sprung}{\hspace{0.05em}\rule{0.5em}{0.05em}\rule{0.05em}{0.7em}\hspace{-0.025em}\rule[0.675em]{0.5em}{0.05em}\hspace{0.05em}}%
+%
+% DREIECKIMPuls /\
+\newcommand{\dreiimp}{\hspace{0.05em}\setlength{\unitlength}{0.1ex}\begin{picture}(25,20)\put(10,20){\line(-1,-2){11}}\put(10,20){\line(1,-2){11}}\end{picture}\hspace{0.05em}}%
+%               
+% si(x)=sin(x)/x
+\newcommand{\si}{\mbox{si}}
+%
+% Ueberstreichung
+\newlength{\widebb}
+\newlength{\widebh}
+\newcommand{\widebar}[1]{\settowidth{\widebb}{#1}\rule[2ex]{\widebb}{0.5pt}\hspace{-\widebb}#1}
+%
+\newcommand{\imj}{\mathrm{j}}%
+%
+% Abkürzung: Überstrich
+% 
+\newcommand{\ov}[1]{\overline{#1}}
+%
+% Abkürzung: Unterstrichen
+%
+\newcommand{\un}[1]{\underline{#1}}
+%
+% Korrespondenzsymbol. ALT! Nicht mehr benutzen!
+%
+\newcommand{\KSE}[1]
+{
+\mbox{
+\unitlength=1ex
+\begin{picture}(1,2)
+\put(0,0.2) {$\circ$-$\bullet$}
+\put(0.9,0.2) {-}
+\put(1.5,0.2) {-}
+\put(0.9,-0.8){\scriptsize{{#1}}}
+\end{picture}
+\hspace{1.4ex}
+}
+}
+%
+% Abkürzungen für kleines und grosses Omega
+%
+\newcommand{\om}[0]{\omega}
+\newcommand{\Om}[0]{\Omega}
+\newcommand{\F}[0]{ 2 \pi F }
+\newcommand{\f}[0]{ 2 \pi f }
+%
+\newcommand{\ABB}[1]{{\bf{}Abb.~{}\ref{#1}}}
+\newcommand{\TAB}[1]{{\bf{}Tab.~{}\ref{#1}}}
+\newcommand{\rect}[0]
+{
+\mbox{
+\unitlength=1ex
+\begin{picture}(1.5,1.5)
+\put(0,0){\line(0,1){1.5}}
+\put(0,1.5){\line(1,0){1.5}}
+\put(1.5,1.5){\line(0,-1){1.5}}
+\end{picture}
+}
+%
+% Winkel-Symbol
+%
+}
+\newcommand{\arc}[0]
+{
+\mbox{
+\unitlength=1ex
+\begin{picture}(2,1)
+\put(0,0){\line(1,0){2}}
+\put(0,0){\line(2,1){2}}
+\end{picture}
+}
+}
+%
+\newcommand{\beule}[0]
+{
+\mbox{
+\unitlength=1ex
+\begin{picture}(3,2)
+\put(0,0){\qbezier(0,0)(0.5,0)(0.75,1)}
+\put(0.75,1){\qbezier(0,0)(0.25,1)(0.75,1)}
+\put(3,0){\qbezier(0,0)(-0.5,0)(-0.75,1)}
+\put(2.25,1){\qbezier(0,0)(-0.25,1)(-0.75,1)}
+\end{picture}
+}
+}
+%
+% Cos-quadrat-Impuls
+%
+\newcommand{\cosi}[0]
+{
+\beule{}\mbox{$_{TC}$}
+}
+%
+% Gaussimpuls
+%
+\newcommand{\gaussi}[0]
+{
+\beule{}\mbox{$_{TG}$}
+}
+%
+\newcommand{\step}[0]
+{
+\mbox{
+\unitlength=1ex
+\begin{picture}(1.5,1.5)
+\put(0,0){\line(1,0){0.75}}
+\put(0.75,0){\line(0,1){1.5}}
+\put(0.75,1.5){\line(1,0){0.75}}
+\end{picture}
+}
+}
+%
+% Dreieckimpuls
+%
+\newcommand{\tria}[0]
+{
+\mbox{
+\unitlength=1ex
+\begin{picture}(4,2)
+\put(0,0){\line(1,1){2}}
+\put(2,2){\line(1,-1){2}}
+\end{picture}
+}
+}
+%
+% Abkuerzung Integral(-inft)^inft
+%
+\newcommand{\Int}[0]
+{
+\int\limits_{-\infty}^{\infty}
+}
+\newcommand{\Intm}[0]
+{
+\int\limits_{\infty}^{-\infty}
+}
+\newcommand{\SCRIPTPATH}{/kt/lehre/nt12/entwurf/script}
+\newcommand{\CHAPTERPATH}{/.}
+%
+%
+%
+%%
+\endinput

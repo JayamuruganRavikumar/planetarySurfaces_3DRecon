@@ -1,0 +1,34 @@
+Homogeneous coordinates is a coordinates system used in projective geometry which serve as an alternate for Eculidian expression for geometric objects and transofrmations. Incase of Euclidian system it becomes suboptimal when we describe central projections and makes the caluculation of transofrmations complex. In a pinhole camera model a object is mapped from 3D to a 2D image. There are different types of mappings done to preserve specific geometric aspect(straight lines, angles and size). To map the 2D coordinates to 3D coordinates we need to perform transofrmations with the 2D coordinates. This becomes difficult to describe the translation with a matrix in Euclidian space ae it describe linear transofrmations. Hence we use homogeneous coordinates where we can express a varaiety of transofrmations. If homogeneous coordinates of a geometric object x is multiplied by a non-zero scalar then the resulting coordinates represent the same point.
+\begin{equation}
+	x = \lambda x
+\end{equation}
+Homogeneous coordinates uses a $n +1$ dimesion vector to represent a $n$ dimesion eculidian vector. 
+\begin{equation}
+x = 
+	\begin{bmatrix}
+		x \\
+		y 
+	\end{bmatrix}
+x = 
+	\begin{bmatrix}
+		x \\
+		y \\
+		1
+	\end{bmatrix}
+	= 
+	\begin{bmatrix}
+		wx \\
+		wy \\
+		w
+	\end{bmatrix}
+	= 
+	\begin{bmatrix}
+		u \\
+		v \\
+		w
+	\end{bmatrix}
+\end{equation}
+
+Homogeneous coordinates allows the possibility of matrix operations, such that all chain transofrmations can be represent by matrix multiplication. The points that are located at infinity can be expressed with finite coordinates. This allows us to represent affine and projective transofrmations with a single matrix.
+
+%[1](https://en.wikipedia.org/wiki/Homogeneous_coordinates)
